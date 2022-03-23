@@ -1,9 +1,14 @@
-import React from 'react'
+import React from 'react';
+import ItemList from './ItemList';
 
-function ItemListContainer(props) {
+const ItemListContainer = () => {
   return (
-   <h2 className="pt-3">{props.greeting}</h2>
-  )
-}
+    <section className="item-list-container">
+      <h3 className="item-list-container__title pt-3">Teclados destacados</h3>
 
-export default ItemListContainer
+      <ItemList />
+    </section>
+  );
+};
+
+export default ItemListContainer;
