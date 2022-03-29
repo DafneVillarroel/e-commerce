@@ -2,6 +2,7 @@ import './App.css';
 import NavBar from './components/NavBar/NavBar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import ItemCount from './components/ItemCount/ItemCount';
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 function App() {
 
    function onAdd(count){
@@ -10,14 +11,10 @@ function App() {
   return (
    <div className="App">
      <NavBar/>
-     <ItemListContainer
+     <ItemDetailContainer/>
+     {/* <ItemListContainer
      greeting="Bienvenidos a mi E-commerce React!"
-     />
-     <ItemCount
-     onAdd={onAdd}
-     initial={1}
-     stock={5}
-     />
+     /> */}
    </div>
   );
 }

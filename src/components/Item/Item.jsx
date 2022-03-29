@@ -1,9 +1,7 @@
 import React from 'react';
 
-const Item = ({ name, image, price, id, stock }) => {
-
-
-  return (
+const Item = ({ name, image, price }) => {
+ return (
   <div style={{display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent:'center'}}>
                                <div  className='col-md-6 p-1 '>
                                       <div className="card w-100 mt-5" >

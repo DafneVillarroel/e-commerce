@@ -1,38 +1,14 @@
-import React, { useEffect, useState } from 'react';
-import Item from './Item';
+import Item from '../Item/Item';
 import { producto } from '../../helpers/getFetch'
 
-
 const ItemList = () => {
-  const [items, setItems] = useState([]);
-
-  const getProducts = new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve(producto);
-    }, 2000);
-  });
-
-  const getProductsFromDB = async () => {
-    try {
-      const result = await getProducts;
-      setItems(result);
-    } catch (error) {
-      console.log(error);
-      alert('No podemos mostrar los productos en este momento');
-    }
-  };
-
-  useEffect(() => {
-    getProductsFromDB();
-  }, []);
-
-  return (
+return (
     <div className="product-list-container" >
       {
-        items.length ? (
+        producto.length ? (
           <>
             {
-              items.map((producto) => {
+              producto.map((producto) => {
                 return (
                   <div key={producto.id} >
                     <Item
