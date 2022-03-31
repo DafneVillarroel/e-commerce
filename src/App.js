@@ -1,8 +1,6 @@
 import './App.css';
-import NavBar from './components/NavBar/NavBar';
-import ItemListContainer from './components/ItemListContainer/ItemListContainer';
-import ItemCount from './components/ItemCount/ItemCount';
-import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
+import RoutesApp from './routes/RoutesApp';
+
 function App() {
 
    function onAdd(count){
@@ -10,11 +8,7 @@ function App() {
   }
   return (
    <div className="App">
-     <NavBar/>
-     <ItemDetailContainer/>
-     {/* <ItemListContainer
-     greeting="Bienvenidos a mi E-commerce React!"
-     /> */}
+       <RoutesApp/>
    </div>
   );
 }

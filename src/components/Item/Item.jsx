@@ -1,6 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-const Item = ({ name, image, price }) => {
+const Item = ({ name, image, price,id }) => {
  return (
   <div style={{display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent:'center'}}>
                                <div  className='col-md-6 p-1 '>
@@ -11,13 +12,14 @@ const Item = ({ name, image, price }) => {
                                           <div className="card-body">
                                               <img src={image} alt='' className='w-60' />
 
-                                          </div>
+                                       </div>
                                           {price}
                                           <div className="card-footer">
+                                              <Link to={`/item/${id}`}>
                                               <button className="btn btn-dark  btn-block">
                                                   detalle del producto
                                               </button>
-
+                                              </Link>
                                           </div>
                                       </div>
                                   </div>

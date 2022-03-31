@@ -1,17 +1,27 @@
 import React, { useEffect, useState } from 'react';
 import ItemDetail from '../ItemDetail/ItemDetail';
 import { producto } from '../../helpers/getFetch';
+import { useParams } from 'react-router-dom';
 
- const getProducts = new Promise((resolve, reject) => {
-  setTimeout(() => {
-    resolve(producto);
-  }, 2000);
-});
+
 
 const ItemDetailContainer = () => {
-  const [items, setItems] = useState([]);
+  const getProducts = new Promise((resolve, reject) => {
+    setTimeout(() => {
+       if(id){
+         let item = producto.find((destino)=>{
+          return destino.categoria === Number(id)
+        })
+        resolve(item)
+      }
+      else resolve(producto)
+    }, 2000);
+  });
 
- const getProductsFromDB = async () => {
+  const [items, setItems] = useState([]);
+  const {id} = useParams()
+
+ const getProductsFromDB = async (id) => {
     try {
       const result = await getProducts;
       setItems(result);
@@ -22,11 +32,11 @@ const ItemDetailContainer = () => {
   };
 
   useEffect(() => {
-    getProductsFromDB();
-  }, []);
+    getProductsFromDB(id);
+  }, [id]);
 
 
-if(producto.find(producto=> producto.name === "Teclado Logitech K380 QWERTY color rosa")){
+if(producto.find(producto=> producto.id === 1)){
 
   return (
       <section className="item-list-container">

@@ -2,43 +2,49 @@ export const producto = [
   {
   "id": 1,
   "stock": 4,
-  "name":"Teclado Logitech K380 QWERTY color rosa",
-  "image": "https://http2.mlstatic.com/D_NQ_NP_967828-MLA46868831362_072021-O.webp",
-  "price":"$4.699"
+  "name":"Botita Bota Bochin Trekking",
+  "categoria":"zapatillas",
+  "image": "https://http2.mlstatic.com/D_NQ_NP_775800-MLA46520880065_062021-O.webp",
+  "price":"$10.699"
   },
   {
   "id": 2,
   "stock": 10,
-  "name":"Teclado De Diseno Retro, Inalambrico Rosa",
-  "image":"https://http2.mlstatic.com/D_NQ_NP_913203-MLA48126901763_112021-O.webp",
-  "price":"$6.899"
+  "name":"Zapatillas Botitas Trekking Ozono",
+  "categoria":"zapatillas",
+  "image":"https://http2.mlstatic.com/D_NQ_NP_689852-MLA49448832605_032022-O.webp",
+  "price":"$8.899"
   },
   {
   "id":3,
   "stock": 21,
-  "name":"Teclado Retro Compacto De Pc, Inalambrico Purpura",
-  "image":"https://http2.mlstatic.com/D_NQ_NP_834170-MLA48178530105_112021-O.webp",
+  "name":"Mochila 32 Litros National Geographic",
+  "categoria":"mochilas",
+  "image":"https://http2.mlstatic.com/D_NQ_NP_995670-MLA31133987095_062019-O.webp",
   "price":"$9888"
   },
   {
   "id":4,
   "stock": 9,
-  "name":"Teclado Retro Blanco",
-  "image":"https://http2.mlstatic.com/D_NQ_NP_858552-MLA47601187371_092021-O.webp",
-  "price":"$8598"
+  "name":"Mochila Tactica Treeking 25 Litros",
+  "categoria":"mochilas",
+  "image":"https://http2.mlstatic.com/D_NQ_NP_679764-MLA45597926211_042021-O.webp",
+  "price":"$7598"
   },
   {
   "id":5,
   "stock": 2,
-  "name":"Mini Teclado Retro Inalambrico Para Pc, Universal",
-  "image":"https://http2.mlstatic.com/D_NQ_NP_987610-MLA48152337419_112021-O.webp",
+  "name":"Mochila Táctica Treeking 20 Litros",
+  "categoria":"mochilas",
+  "image":"https://http2.mlstatic.com/D_NQ_NP_942958-MLA45597650640_042021-O.webp",
   "price":"$9589"
   },
   {
   "id":6,
   "stock": 4,
-  "name":"Teclado Con Teclas Hexagonales Rosa",
-  "image":"https://http2.mlstatic.com/D_NQ_NP_863945-MLA48557588506_122021-O.webp",
+  "name":"Zapatillas Wake 178 Trekking",
+  "categoria":"zapatillas",
+  "image":"https://http2.mlstatic.com/D_NQ_NP_873417-MLA49444933450_032022-O.webp",
   "price":"$6889"
   }
 ]
