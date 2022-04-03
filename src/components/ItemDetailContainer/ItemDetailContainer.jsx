@@ -6,11 +6,16 @@ import { useParams } from 'react-router-dom';
 
 
 const ItemDetailContainer = () => {
+
+  const [items, setItems] = useState([]);
+  const {id} = useParams()
+
+
   const getProducts = new Promise((resolve, reject) => {
     setTimeout(() => {
        if(id){
          let item = producto.find((destino)=>{
-          return destino.categoria === Number(id)
+          return destino.id === Number(id)
         })
         resolve(item)
       }
@@ -18,10 +23,9 @@ const ItemDetailContainer = () => {
     }, 2000);
   });
 
-  const [items, setItems] = useState([]);
-  const {id} = useParams()
 
- const getProductsFromDB = async (id) => {
+
+ const getProductsFromDB = async () => {
     try {
       const result = await getProducts;
       setItems(result);
@@ -32,27 +36,23 @@ const ItemDetailContainer = () => {
   };
 
   useEffect(() => {
-    getProductsFromDB(id);
+    getProductsFromDB();
   }, [id]);
 
 
-if(producto.find(producto=> producto.id === 1)){
-
-  return (
+ return (
       <section className="item-list-container">
         <h3 className="item-list-container__title pt-3">Teclados destacados</h3>
          <div className="product-list-container" >
           {
-        <ItemDetail name={producto.name}
-                    price={producto.price}
-                    image={producto.image}
+        <ItemDetail items={items}
                     />
 
           }
         </div>
       </section>
     );
-  };
+
 
 }
 

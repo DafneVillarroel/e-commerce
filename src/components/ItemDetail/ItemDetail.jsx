@@ -1,7 +1,7 @@
 import React from 'react';
 import ItemCount from '../ItemCount/ItemCount'
 
-const ItemDetail = ({name,image,price, onAdd }) => {
+const ItemDetail = ({items, onAdd }) => {
  return (
   <div style={{display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent:'center'}}>
                                <div  className='col-md-6 p-1 '>
@@ -9,13 +9,13 @@ const ItemDetail = ({name,image,price, onAdd }) => {
                                       <div className="card w-100 mt-5" >
 
                                           <div className="card-header">
-                                              {`${name}`}
+                                              {`${items.name}`}
                                           </div>
                                           <div className="card-body">
-                                              <img src={image} alt='' className='w-60' />
+                                              <img src={items.image} alt='' className='w-60' />
 
                                           </div>
-                                          {price}
+                                          {items.price}
 
                                           <div className="card-footer">
                                               <button className="btn btn-dark  btn-block mb-3">

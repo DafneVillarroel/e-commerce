@@ -12,11 +12,7 @@ return (
                 return (
                   <div key={producto.id} >
                     <Item
-                      name={producto.name}
-                      image={producto.image}
-                      price={producto.price}
-                      stock={producto.stock}
-                      id={producto.id}
+                     producto={producto}
                     />
                   </div>
                 );
