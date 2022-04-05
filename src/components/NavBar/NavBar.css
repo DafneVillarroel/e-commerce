@@ -1,6 +1,13 @@
 .White{
   color: white;
+  text-decoration: none;
+  padding-inline: 10px;
+}
+span{
+  color: white;
+  font-weight: bold;
 }
 .Grey{
   color: grey;
+  padding-inline: 10px;
 }

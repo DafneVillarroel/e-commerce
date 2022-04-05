@@ -9,8 +9,8 @@ function NavBar() {
     <nav id="header" className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container">
         <NavLink to="/" >
-           Trekking Explorer
-        </NavLink>
+          <span>Trekking Explorer</span>
+       </NavLink>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
@@ -18,10 +18,10 @@ function NavBar() {
 
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <nav className="ms-auto">
-              <NavLink className="mt-2 ms-3"  to="/" className={({isActive})=> isActive ? 'Grey' : 'White'}>Home</NavLink>
-              <NavLink className="mt-2 ms-3" to="/categoria/mochilas" className={({isActive})=> isActive ? 'Grey' : 'White'}>Mochilas</NavLink>
-              <NavLink className="mt-2 ms-3" to="/categoria/zapatillas" className={({isActive})=> isActive ? 'Grey' : 'White'}>Zapatillas</NavLink>
-             <NavLink className="mt-2 ms-3" to='/cart' className={({isActive})=> isActive ? 'White' : 'Grey'}>
+              <NavLink  to="/" className={({isActive})=> isActive ? 'Grey' : 'White'}>Home</NavLink>
+              <NavLink  to="/categoria/mochilas" className={({isActive})=> isActive ? 'Grey' : 'White'}>Mochilas</NavLink>
+              <NavLink  to="/categoria/zapatillas" className={({isActive})=> isActive ? 'Grey' : 'White'}>Zapatillas</NavLink>
+             <NavLink   to='/cart' className={({isActive})=> isActive ? 'White' : 'Grey'}>
                <CartWidget/>
             </NavLink>
           </nav>
