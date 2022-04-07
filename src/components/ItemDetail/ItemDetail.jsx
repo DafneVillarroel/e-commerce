@@ -3,14 +3,15 @@ import ItemCount from '../ItemCount/ItemCount'
 import './ItemDetail.css'
 import {Link} from "react-router-dom"
 import { useState } from 'react';
+import useCartContext from '../../context/CartContext';
 
 
 const ItemDetail = ({items}) => {
-let [inCart, setCart] = React.useState(false)
+
+const {addItem, isInCart } = useCartContext()
 
  function onAdd(count){
-     setCart(true)
-    alert("Agregaste " +  count + " elementos al carrito")
+     addItem(items, count)
   }
 
 if (items) {
@@ -33,7 +34,7 @@ if (items) {
                                                   <button className="btn btn-dark  btn-block mb-3">
                                                       detalle del producto
                                                   </button>
-                                                  {inCart ? (
+                                                  {isInCart(items.id) ? (
                                                  <Link to="/cart">
                                                  <button className="btn btn-dark  btn-block mb-3 mt-1 ms-3">Finaliza tu compra</button>
                                                 </Link>
