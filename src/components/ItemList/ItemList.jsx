@@ -1,7 +1,6 @@
 import Item from '../Item/Item';
-import { producto } from '../../helpers/getFetch'
 
-const ItemList = () => {
+const ItemList = ({producto}) => {
 return (
     <div className="product-list-container" >
       {
