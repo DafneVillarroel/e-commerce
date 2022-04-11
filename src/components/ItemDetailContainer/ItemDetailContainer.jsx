@@ -7,7 +7,8 @@ import { useParams } from 'react-router-dom';
 
 const ItemDetailContainer = () => {
 
-  const [items, setItems] = useState([]);
+  const [items, setItems] = useState([])
+ const [loading, setLoading] = useState(true)
   const {id} = useParams()
 
 
@@ -20,38 +21,36 @@ const ItemDetailContainer = () => {
         resolve(item)
       }
       else resolve(producto)
-    }, 2000);
+    }, 2000)
   });
 
 
 
  const getProductsFromDB = async () => {
     try {
-      const result = await getProducts;
-      setItems(result);
+      const result = await getProducts
+      setItems(result)
+      setLoading(false)
     } catch (error) {
-      console.log(error);
+      console.log(error)
       alert('No podemos mostrar los productos en este momento');
     }
   };
 
   useEffect(() => {
-    getProductsFromDB();
-  }, [id]);
+    getProductsFromDB()
+  }, [id])
 
 
  return (
       <section className="item-list-container">
-        <h3 className="item-list-container__title pt-3">Teclados destacados</h3>
          <div className="product-list-container" >
-          {
-        <ItemDetail items={items}
-                    />
-
-          }
+           { loading ? <h3>Loading...</h3> :
+           <ItemDetail items={items}
+          /> }
         </div>
       </section>
-    );
+    )
 
 
 }

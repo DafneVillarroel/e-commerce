@@ -24,14 +24,30 @@ const [itemsInCart, setItemsInCart] = useState([])
    let itemInCart = itemsInCart.find((items)=>{
      return items.id === id
    })
-   return itemsInCart
+   return itemInCart
    }
 
+  function removeItemFromCart(id){
+    if(isInCart(id)){
+      let filterCart = itemsInCart.filter((items)=>{
+        return items.id !== id
+      })
+      setItemsInCart(filterCart)
+    }
+  }
 
-
-
+  function clearCart(){
+    setItemsInCart([])
+  }
+  function countItemsInCart(){
+    let total =0
+    itemsInCart.forEach((items)=>{
+      total += items.quantity
+    })
+    return total
+  }
   return (
-    <CartContext.Provider value={{addItem, isInCart, getItemInCart, quantity:5, itemsInCart}}>
+    <CartContext.Provider value={{addItem, isInCart,clearCart,removeItemFromCart, getItemInCart, quantity:5, itemsInCart,countItemsInCart}}>
       {children}
     </CartContext.Provider>
   )
