@@ -2,43 +2,50 @@ import React, { useEffect, useState } from 'react';
 import ItemList from '../ItemList/ItemList';
 import { producto } from '../../helpers/getFetch'
 import { useParams } from 'react-router-dom';
-
+import {doc, getDoc, getFirestore} from 'firebase/firestore'
 
 
 
 const ItemListContainer = () => {
 
  const [items, setItems] = useState([]);
-
+ const [producto, setProducto] = useState({})
  const { categoriaId } = useParams()
 
-
- const getProducts = new Promise((resolve, reject) => {
-  setTimeout(() => resolve(producto), 2000);
- });
-
-const getProductsFromDB = async () => {
-try {
-const result = await getProducts;
-   if (categoriaId) {
- const resultado = result.filter(destino => destino.categoria === categoriaId);
-setItems(resultado);
-} else {
- setItems(result);
-}
-
-} catch (error) {
-console.log(error);
-alert('No podemos mostrar los productos en este momento');
-}
-};
+ useEffect(()=>{
+   const querydb = getFirestore()
+   const queryProd = doc(querydb,'productos','X8I1Y7nYU2pcpBNecGUj')
+   getDoc(queryProd)
+   .then(resp => setProducto({id: resp.id, ...resp.data()}))
+  },[])
 
 
-useEffect(() => {
+//  const getProducts = new Promise((resolve, reject) => {
+//   setTimeout(() => resolve(producto), 2000);
+//  });
 
-  getProductsFromDB();
+// const getProductsFromDB = async () => {
+// try {
+// const result = await getProducts;
+//    if (categoriaId) {
+//  const resultado = result.filter(destino => destino.categoria === categoriaId);
+// setItems(resultado);
+// } else {
+//  setItems(result);
+// }
 
- }, [categoriaId]);
+// } catch (error) {
+// console.log(error);
+// alert('No podemos mostrar los productos en este momento');
+// }
+// };
+
+
+// useEffect(() => {
+
+//   getProductsFromDB();
+
+//  }, [categoriaId]);
 
 
 
