@@ -35,7 +35,7 @@ else{
           <td>{items.name}</td>
           <td>{items.price}</td>
           <td>{items.quantity}</td>
-          <td>${(items.quantity * items.price).toFixed(2)}</td>
+          <td>{parseFloat(items.quantity * items.price)}</td>
           <td>
             <button className="btn btn-danger" onClick={()=>removeItemFromCart(items.id)}>Eliminar</button>
           </td>

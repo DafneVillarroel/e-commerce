@@ -5,7 +5,7 @@ export const producto = [
   "name":"Botita Bota Bochin Trekking",
   "categoria":"zapatillas",
   "image": "https://http2.mlstatic.com/D_NQ_NP_775800-MLA46520880065_062021-O.webp",
-  "price":"$10.699"
+  "price":"10.699"
   },
   {
   "id": 2,
@@ -13,7 +13,7 @@ export const producto = [
   "name":"Zapatillas Botitas Trekking Ozono",
   "categoria":"zapatillas",
   "image":"https://http2.mlstatic.com/D_NQ_NP_689852-MLA49448832605_032022-O.webp",
-  "price":"$8.899"
+  "price":"8.899"
   },
   {
   "id":3,
@@ -21,7 +21,7 @@ export const producto = [
   "name":"Mochila 32 Litros National Geographic",
   "categoria":"mochilas",
   "image":"https://http2.mlstatic.com/D_NQ_NP_995670-MLA31133987095_062019-O.webp",
-  "price":"$9888"
+  "price":"9888"
   },
   {
   "id":4,
@@ -29,7 +29,7 @@ export const producto = [
   "name":"Mochila Tactica Treeking 25 Litros",
   "categoria":"mochilas",
   "image":"https://http2.mlstatic.com/D_NQ_NP_679764-MLA45597926211_042021-O.webp",
-  "price":"$7598"
+  "price":"7598"
   },
   {
   "id":5,
@@ -37,7 +37,7 @@ export const producto = [
   "name":"Mochila Táctica Treeking 20 Litros",
   "categoria":"mochilas",
   "image":"https://http2.mlstatic.com/D_NQ_NP_942958-MLA45597650640_042021-O.webp",
-  "price":"$9589"
+  "price":"9589"
   },
   {
   "id":6,
@@ -45,7 +45,7 @@ export const producto = [
   "name":"Zapatillas Wake 178 Trekking",
   "categoria":"zapatillas",
   "image":"https://http2.mlstatic.com/D_NQ_NP_873417-MLA49444933450_032022-O.webp",
-  "price":"$6889"
+  "price":"6889"
   }
 ]
 
