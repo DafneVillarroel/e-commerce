@@ -2,23 +2,27 @@ import React, { useEffect, useState } from 'react';
 import ItemList from '../ItemList/ItemList';
 import { producto } from '../../helpers/getFetch'
 import { useParams } from 'react-router-dom';
-import {doc, getDoc, getFirestore} from 'firebase/firestore'
+import {collection, doc, getDoc, getDocs, getFirestore, query, where} from 'firebase/firestore'
 
 
 
 const ItemListContainer = () => {
 
  const [items, setItems] = useState([]);
- const [producto, setProducto] = useState({})
+ const [productos, setProductos] = useState({})
  const { categoriaId } = useParams()
 
  useEffect(()=>{
    const querydb = getFirestore()
-   const queryProd = doc(querydb,'productos','X8I1Y7nYU2pcpBNecGUj')
-   getDoc(queryProd)
-   .then(resp => setProducto({id: resp.id, ...resp.data()}))
+   const queryCollection = collection(querydb, 'productos')
+   const queryFilter = query(queryCollection, where('categoria','==','zapatillas'))
+
+   getDocs(queryFilter)
+    .then(resp=>setProductos(resp.docs.map(items =>( {id: items.id, ...items.data()} ))))
+    .catch(err=> console.log(err))
   },[])
 
+console.log(productos)
 
 //  const getProducts = new Promise((resolve, reject) => {
 //   setTimeout(() => resolve(producto), 2000);
