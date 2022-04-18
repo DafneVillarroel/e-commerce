@@ -1,3 +1,4 @@
+import { faCartFlatbedSuitcase } from "@fortawesome/free-solid-svg-icons"
 import React, {useState, createContext, useContext} from "react"
 
 const CartContext = createContext()
@@ -46,8 +47,11 @@ const [itemsInCart, setItemsInCart] = useState([])
     })
     return total
   }
+  const precioTotal= ()=>{
+    return itemsInCart.reduce((acum,prod) => acum += prod.quantity, 0)
+  }
   return (
-    <CartContext.Provider value={{addItem, isInCart,clearCart,removeItemFromCart, getItemInCart, quantity:5, itemsInCart,countItemsInCart}}>
+    <CartContext.Provider value={{addItem,precioTotal, isInCart,clearCart,removeItemFromCart, getItemInCart, quantity:5, itemsInCart,countItemsInCart}}>
       {children}
     </CartContext.Provider>
   )

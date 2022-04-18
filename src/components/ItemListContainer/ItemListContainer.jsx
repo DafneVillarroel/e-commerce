@@ -20,7 +20,7 @@ const ItemListContainer = () => {
    getDocs(queryFilter)
     .then(resp=>setProductos(resp.docs.map(items =>( {id: items.id, ...items.data()} ))))
     .catch(err=> console.log(err))
-  },[])
+  },[categoriaId])
 
 console.log(productos)
 
