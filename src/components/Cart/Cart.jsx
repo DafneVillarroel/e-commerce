@@ -1,7 +1,7 @@
 import React from 'react'
 import useCartContext from "../../context/CartContext"
 import {Link} from "react-router-dom"
-import { getFirestore,collection, addDoc } from 'firebase/firestore'
+import { getFirestore,collection, query,getDocs, updateDoc, where, addDoc, writeBatch } from 'firebase/firestore'
 
 function Cart() {
 
@@ -25,10 +25,27 @@ function Cart() {
 const db = getFirestore()
 const queryCollection = collection(db, 'orders')
 addDoc(queryCollection, orden)
-.then(resp=> console.log(resp))
+.then(({id}) => console.log( id ))
 
 // console.log(orden)
 }
+
+// actualizar stock
+// const queryCollectionStock = collection(db, 'productos')
+
+// const queryActualizarStock = query(
+//   queryCollectionStock,
+//   where(documentId(), 'in', itemsInCart.map(it => it.id))
+// )
+// const batch = writeBatch(db)
+
+// await getDocs(queryActualizarStock)
+//  .then(resp => resp.docs.forEach(res => batch.update(res.ref,{
+//    stock:res.data().stock = itemsInCart.find(items => items.id === res.id).quantity
+//  }) ))
+// .finally(()=> console.log('actualizado'))
+
+// batch.commit()
 
   if(itemsInCart.length === 0){
      return(
@@ -73,9 +90,7 @@ else{
 <button onClick={()=>clearCart()} className="btn btn-danger">Vaciar Carrito</button>
   <button onClick={()=>generarOrden()} className="btn btn-danger">Realizar Orden</button>
 </div>
-
-
- )
+)
 }
 
 }

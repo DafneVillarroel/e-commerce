@@ -20,6 +20,8 @@ useEffect(()=>{
 
  getDoc(queryProd)
  .then(resp => setProducto({id: resp.id, ...resp.data()}))
+ .catch(err => console.log(err))
+ .finally(()=> setLoading(false))
 },[])
 //   const getProducts = new Promise((resolve, reject) => {
 //     setTimeout(() => {
