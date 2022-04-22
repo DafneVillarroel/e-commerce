@@ -6,15 +6,15 @@ import { useState } from 'react';
 import useCartContext from '../../context/CartContext';
 
 
-const ItemDetail = ({items}) => {
+const ItemDetail = ({producto}) => {
 
 const {addItem, isInCart } = useCartContext()
 
  function onAdd(count){
-     addItem(items, count)
+     addItem(producto, count)
   }
 
-if (items) {
+if (producto) {
      return (
       <div style={{display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent:'center'}} >
                                    <div  className='col-md-6 p-1 '>
@@ -22,19 +22,17 @@ if (items) {
                                           <div className="card w-100 mt-5" >
 
                                               <div className="card-header">
-                                                  {`${items.name}`}
+                                                  {`${producto.name}`}
                                               </div>
                                               <div className="card-body">
-                                                  <img src={items.image} alt='' className='w-60' />
+                                                  <img src={producto.image} alt='' className='w-60' />
 
                                               </div>
-                                              {items.price}
+                                              {producto.price}
 
                                               <div className="card-footer">
-                                                  <button className="btn btn-dark  btn-block mb-3">
-                                                      detalle del producto
-                                                  </button>
-                                                  {isInCart(items.id) ? (
+
+                                                  {isInCart(producto.id) ? (
                                                  <Link to="/cart">
                                                  <button className="btn btn-dark  btn-block mb-3 mt-1 ms-3">Finaliza tu compra</button>
                                                 </Link>

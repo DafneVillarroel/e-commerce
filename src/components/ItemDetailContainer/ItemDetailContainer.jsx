@@ -57,7 +57,7 @@ useEffect(()=>{
       <section className="item-list-container">
          <div className="product-list-container" >
            { loading ? <h3>Loading...</h3> :
-           <ItemDetail items={items}
+           <ItemDetail producto={producto}
           /> }
         </div>
       </section>

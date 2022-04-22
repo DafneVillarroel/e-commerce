@@ -1,5 +1,6 @@
 import { initializeApp } from "firebase/app";
 
+// Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyBq4CN1XupDQjsRD0ThZ0A5nBsjK6qCTgs",
   authDomain: "trekking-explorer.firebaseapp.com",
