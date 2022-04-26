@@ -1,7 +1,7 @@
 import React from 'react'
 import useCartContext from "../../context/CartContext"
 import {Link} from "react-router-dom"
-import { getFirestore,collection, query,getDocs, updateDoc, where, addDoc, writeBatch } from 'firebase/firestore'
+import { getFirestore,collection, query,getDocs, updateDoc, where, addDoc, writeBatch, Timestamp } from 'firebase/firestore'
 
 function Cart() {
 
@@ -22,12 +22,15 @@ function Cart() {
 
   return(id,nombre,precio)
 })
+
+orden.date = Timestamp.fromDate(new Date())
+
 const db = getFirestore()
 const queryCollection = collection(db, 'orders')
 addDoc(queryCollection, orden)
-.then(({id}) => console.log( id ))
+.then(({id}) => alert("Pedido registrado exitosamente. Su id es : " + (id) ))
+  .catch(err=> console.log(err))
 
-// console.log(orden)
 }
 
 // actualizar stock
@@ -88,7 +91,7 @@ else{
 
 <button onClick={()=> {alert('compra realizada')}} className="btn btn-success mx-2">Pagar</button>
 <button onClick={()=>clearCart()} className="btn btn-danger">Vaciar Carrito</button>
-  <button onClick={()=>generarOrden()} className="btn btn-danger">Realizar Orden</button>
+  <button onClick={generarOrden} className="btn btn-danger">Realizar Orden</button>
 </div>
 )
 }
