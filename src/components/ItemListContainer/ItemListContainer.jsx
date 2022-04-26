@@ -3,7 +3,7 @@ import ItemList from '../ItemList/ItemList';
 import { producto } from '../../helpers/getFetch'
 import { useParams } from 'react-router-dom';
 import {collection, doc, getDoc, getDocs, getFirestore, query, where} from 'firebase/firestore'
-
+import './ItemListContainer.css'
 
 
 const ItemListContainer = () => {
@@ -15,38 +15,39 @@ const [loading, setLoading] = useState(true)
 
 
  useEffect(()=>{
-     const querydb = getFirestore()
-     const queryCollection = collection(querydb, 'productos')
 
-   if(categoriaId === 'zapatillas'){
-     const queryFilter = query(queryCollection, where('categoria','==','zapatillas'))
+       const querydb = getFirestore()
+       const queryCollection = collection(querydb, 'productos')
 
-      getDocs(queryFilter)
-    .then(resp=>setProductos(resp.docs.map(items =>( {id: items.id, ...items.data()} ))))
-    .catch(err=> console.log(err))
-    .finally(()=> setLoading(false))
-  } else{
-   if(!categoriaId ){
-    getDocs(queryCollection)
-    .then(resp=>setProductos(resp.docs.map(items =>( {id: items.id, ...items.data()} )))
-     )
-    .catch(err=> console.log(err))
-    .finally(()=> setLoading(false))
-   } else{
-    const queryFilter = query(queryCollection, where('categoria','==','mochilas'))
+     if(categoriaId === 'zapatillas'){
+       const queryFilter = query(queryCollection, where('categoria','==','zapatillas'))
 
-      getDocs(queryFilter)
-    .then(resp=>setProductos(resp.docs.map(items =>( {id: items.id, ...items.data()} ))))
-    .catch(err=> console.log(err))
-    .finally(()=> setLoading(false))
-   }
+        getDocs(queryFilter)
+      .then(resp=>setProductos(resp.docs.map(items =>( {id: items.id, ...items.data()} ))))
+      .catch(err=> console.log(err))
+      .finally(()=> setLoading(false))
+    } else{
+     if(!categoriaId ){
+      getDocs(queryCollection)
+      .then(resp=>setProductos(resp.docs.map(items =>( {id: items.id, ...items.data()} )))
+       )
+      .catch(err=> console.log(err))
+      .finally(()=> setLoading(false))
+     } else{
+      const queryFilter = query(queryCollection, where('categoria','==','mochilas'))
 
- }
-},[categoriaId])
+        getDocs(queryFilter)
+      .then(resp=>setProductos(resp.docs.map(items =>( {id: items.id, ...items.data()} ))))
+      .catch(err=> console.log(err))
+      .finally(()=> setLoading(false))
+     }
+
+   }}
+,[categoriaId])
 
 
 //  const getProducts = new Promise((resolve, reject) => {
-//   setTimeout(() => resolve(producto), 2000);
+//   setTimeout(() => {}, 2000)
 //  });
 
 // const getProductsFromDB = async () => {
@@ -78,7 +79,13 @@ const [loading, setLoading] = useState(true)
 
   <section className="item-list-container">
   <h3 className="item-list-container__title pt-3">Productos Destacados</h3>
-   { loading ? <h3>Loading...</h3> :
+   { loading ? <div class="spinner">
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  </div> :
    <ItemList producto={productos} /> }
   </section>
 

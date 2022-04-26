@@ -49,10 +49,3 @@ export const producto = [
   }
 ]
 
-export const images= [
-  {
-  "image1":"https://images.unsplash.com/photo-1519607482862-4e767329ce8b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80",
-   "image2":"https://images.unsplash.com/photo-1496996317594-95a0cf707af5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
-   "image3":"https://images.unsplash.com/photo-1486037242572-f25faf7505e3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
-  }
-]

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import ItemDetail from '../ItemDetail/ItemDetail';
 import { producto } from '../../helpers/getFetch';
 import { useParams } from 'react-router-dom';
+import './ItemDetailContainer.css'
 import {doc, getDoc, getFirestore} from 'firebase/firestore'
 
 
@@ -18,10 +19,13 @@ useEffect(()=>{
  const querydb = getFirestore()
  const queryProd = doc(querydb,'productos',id)
 
- getDoc(queryProd)
- .then(resp => setProducto({id: resp.id, ...resp.data()}))
- .catch(err => console.log(err))
- .finally(()=> setLoading(false))
+ setTimeout(() => {
+        getDoc(queryProd)
+         .then(resp => setProducto({id: resp.id, ...resp.data()}))
+         .catch(err => console.log(err))
+         .finally(()=> setLoading(false))
+      }, 1000)
+
 },[])
 //   const getProducts = new Promise((resolve, reject) => {
 //     setTimeout(() => {
@@ -56,7 +60,15 @@ useEffect(()=>{
  return (
       <section className="item-list-container">
          <div className="product-list-container" >
-           { loading ? <h3>Loading...</h3> :
+           { loading ?
+          <div class="spinner">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          </div>
+          :
            <ItemDetail producto={producto}
           /> }
         </div>

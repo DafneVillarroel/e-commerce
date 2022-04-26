@@ -10,10 +10,8 @@ function CartWidget() {
   const {countItemsInCart} = useCartContext()
   return (
     <div>
-      <Link to="/cart">
        <FontAwesomeIcon id="cart" icon={faShoppingCart} />
-      </Link>
-      {countItemsInCart() !== 0 ? <div><small>{countItemsInCart()}</small></div>: <></>}
+       {countItemsInCart() !== 0 ? <div><small>{countItemsInCart()}</small></div>: <></>}
 
   </div>
   )
