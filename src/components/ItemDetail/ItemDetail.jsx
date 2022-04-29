@@ -16,16 +16,17 @@ const {addItem, isInCart } = useCartContext()
 
 if (producto) {
      return (
-      <div style={{display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent:'center'}} >
-                                   <div  className='col-md-6 p-1 '>
+    //   <div style={{display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent:'center'}} >
+    <div>
+                                   <div  >
 
-                                          <div className="card w-100 mt-5" >
+                                          <div  >
 
                                               <div className="card-header">
                                                   {`${producto.name}`}
                                               </div>
                                               <div className="card-body">
-                                                  <img src={producto.image} alt='' className='w-60' />
+                                                  <img src={producto.image} alt='' className='w-30' />
 
                                               </div>
                                               {producto.price}

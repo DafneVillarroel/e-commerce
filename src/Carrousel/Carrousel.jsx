@@ -1,42 +1,34 @@
 import React from 'react'
-import { images } from '../helpers/getFetch'
 import './Carrousel.css'
 
 function Carrousel() {
   return (
-  <main id="main">
-    <div id="carousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-pause="false">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img class="d-block w-100" src={images.image1} alt="hawaii1"/>
-        </div>
-        <div class="carousel-item">
-          <img class="d-block w-100" src={images.image2} alt="hawaii2"/>
-        </div>
-        <div class="carousel-item">
-          <img class="d-block w-100" src={images.image3} alt="hawaii3"/>
-        </div>
+  <div id="carouselExampleIndicators" className="carousel slide" data-bs-ride="carousel">
+    <div className="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div className="carousel-inner">
+      <div className="carousel-item active">
+        <img src="../../public/images/01.jpg" className="d-block w-100" alt="..."/>
       </div>
-      <div class="overlay">
-        <div class="container">
-          <div class="row align-items-center">
-            <div class="col-md-6 offset-md-6 text-center text-md-start">
-              <h1>Platzi Conf Hawaii</h1>
-              <p class="d-none d-md-block">Platzi Conf llega por primera vez a Hawaii! Un evento
-                para compartir con nuestra comunidad el conocimiento y experiencia
-                de los expertos que estan creando el futuro de internet
-                . Ven a conocer a miembros del Team Platzi, a
-                otros estudiantes de Platzi y a los oradores
-                de primer nivel que tenemos para ti. Te esperamos!</p>
-              <a href="#" class="btn btn-outline-light">Quiero ser orador</a>
-              <button type="button" class="btn btn-platzi" data-toggle="modal" data-target="#modal">Comprar
-                tickets</button>
-            </div>
-          </div>
-        </div>
+      <div className="carousel-item">
+        <img src="../../public/images/01.jpg" className="d-block w-100" alt="..."/>
+      </div>
+      <div className="carousel-item">
+        <img src="../../public/images/01.jpg" className="d-block w-100" alt="..."/>
       </div>
     </div>
-  </main>
+    <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+      <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span className="visually-hidden">Previous</span>
+    </button>
+    <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+      <span className="carousel-control-next-icon" aria-hidden="true"></span>
+      <span className="visually-hidden">Next</span>
+    </button>
+  </div>
   )
 }
 

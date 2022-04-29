@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import Cart from '../components/Cart/Cart'
 import NavBar from '../components/NavBar/NavBar'
+import Carrousel from'../Carrousel/Carrousel'
 import ItemDetailContainer from '../components/ItemDetailContainer/ItemDetailContainer'
 import ItemListContainer from '../components/ItemListContainer/ItemListContainer'
 import {CartContextProvider} from '../context/CartContext'
@@ -12,6 +13,7 @@ function RoutesApp() {
         <CartContextProvider>
      <BrowserRouter>
         <NavBar />
+        <Carrousel/>
          <Routes>
               <Route
                 path="/"

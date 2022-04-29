@@ -49,3 +49,14 @@ export const producto = [
   }
 ]
 
+export const images = [
+{
+"image1": "https://http2.mlstatic.com/D_NQ_NP_775800-MLA46520880065_062021-O.webp"
+},
+{
+"image2":"https://http2.mlstatic.com/D_NQ_NP_689852-MLA49448832605_032022-O.webp"
+},
+{
+"image3":"https://http2.mlstatic.com/D_NQ_NP_995670-MLA31133987095_062019-O.webp"
+}
+]
