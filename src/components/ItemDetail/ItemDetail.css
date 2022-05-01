@@ -1,8 +1,29 @@
 .card {
- width: 190px;
- height: 500px;
+  width: 650px!important;
+  margin: auto;
+ height: auto;
  border-radius: 30px;
  background: #e0e0e0;
  box-shadow: 15px 15px 30px #bebebe,
              -15px -15px 30px #ffffff;
+}
+
+
+.title{
+  font-weight: bold;
+}
+.price{
+  font-size: 24px;
+}
+.description{
+  color:rgb(78, 208, 78);
+  font-size: 16px;
+}
+@media screen and (max-width:425px){
+.card-body{
+  flex-direction: column;
+}
+.image{
+  align-self: center;
+}
 }

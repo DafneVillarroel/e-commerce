@@ -1,6 +1,7 @@
 import React from 'react'
 import useCartContext from "../../context/CartContext"
 import {Link} from "react-router-dom"
+import './Cart.css'
 import { getFirestore,collection, query,getDocs, updateDoc, where, addDoc, writeBatch, Timestamp } from 'firebase/firestore'
 
 function Cart() {
@@ -53,24 +54,26 @@ addDoc(queryCollection, orden)
   if(itemsInCart.length === 0){
      return(
      <div className="container">
-       <h2>No hay elementos en el carrito</h2>
-       <Link to="/">Ir al catalogo</Link>
+       <h3 className="mt-4">No hay elementos en el carrito</h3>
+       <div>
+        <Link to="/">Ir al catalogo</Link>
+       </div>
+
+       <img src="https://i.blogs.es/588e01/istock-689453486/840_560.jpeg" className="w-75 mt-2"/>
      </div>
      )
   }
 else{
  return(
-<div className="container">
-<h2>Carrito de Compras</h2>
+<div className="container ">
+<h2 className="mt-3">Carrito de Compras</h2>
 <table className="table">
   <thead>
-    <tr>
       <th>Nombre</th>
       <th>Precio</th>
       <th>Cantidad</th>
       <th>Total</th>
       <th>Acciones</th>
-    </tr>
   </thead>
   <tbody>
     {
@@ -89,9 +92,9 @@ else{
   </tbody>
 </table>
 
-<button onClick={()=> {alert('compra realizada')}} className="btn btn-success mx-2">Pagar</button>
-<button onClick={()=>clearCart()} className="btn btn-danger">Vaciar Carrito</button>
-  <button onClick={generarOrden} className="btn btn-danger">Realizar Orden</button>
+<button onClick={()=> {alert('compra realizada')}} className="btn btn-success mx-2 mt-2">Pagar</button>
+<button onClick={()=>clearCart()} className="btn btn-danger mt-2 me-2">Vaciar Carrito</button>
+  <button onClick={generarOrden} className="btn btn-dark mt-2">Realizar Orden</button>
 </div>
 )
 }

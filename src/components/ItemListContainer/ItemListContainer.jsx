@@ -4,6 +4,7 @@ import { producto } from '../../helpers/getFetch'
 import { useParams } from 'react-router-dom';
 import {collection, doc, getDoc, getDocs, getFirestore, query, where} from 'firebase/firestore'
 import './ItemListContainer.css'
+import Carrousel from '../../Carrousel/Carrousel';
 
 
 const ItemListContainer = () => {
@@ -78,7 +79,10 @@ const [loading, setLoading] = useState(true)
  return (
 
   <section className="item-list-container">
-  <h3 className="item-list-container__title pt-3">Productos Destacados</h3>
+    <div>
+       <Carrousel/>
+    </div>
+  <h4 className="item-list-container__title pt-3">Productos Destacados</h4>
    { loading ? <div class="spinner">
   <div></div>
   <div></div>
@@ -86,7 +90,7 @@ const [loading, setLoading] = useState(true)
   <div></div>
   <div></div>
   </div> :
-   <ItemList producto={productos} /> }
+   <ItemList  producto={productos} /> }
   </section>
 
  );

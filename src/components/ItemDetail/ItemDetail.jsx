@@ -16,43 +16,46 @@ const {addItem, isInCart } = useCartContext()
 
 if (producto) {
      return (
-    //   <div style={{display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent:'center'}} >
-    <div>
-                                   <div  >
+                                   <div className="row mt-4" >
 
-                                          <div  >
+                                          <div className="col-12 col-md-6 col-lg-4 mb-4 card ">
+                                                <div className="card-body d-flex">
+                                                  <img src={producto.image} className="w-50 image" alt=''/>
+                                                 <div >
+                                                     <div className="card-header title text-start">
+                                                      {`${producto.name}`}
+                                                      </div>
+                                                      <div className="mt-3 text-start ms-2 price">
+                                                         ${producto.price}
+                                                      </div>
+                                                      <div className="description">
+                                                        <p className="text-start ms-2 mt-3">Devolución gratis</p>
+                                                        <p className="text-start ms-2">Tenés 30 días desde que lo recibís.</p>
+                                                      </div>
+                                                      <div className="mt-4">
 
-                                              <div className="card-header">
-                                                  {`${producto.name}`}
+                                                          {isInCart(producto.id) ? (
+                                                         <Link to="/cart">
+                                                         <button className="btn btn-warning d-flex justify-content-start ms-2">Comprar ahora</button>
+                                                        </Link>
+                                                          ):(
+
+                                                         <ItemCount
+                                                         onAdd={onAdd}
+                                                         initial={1}
+                                                         stock={5}
+                                                         />
+                                                          )}
+                                                      </div>
+                                                 </div>
+
+
                                               </div>
-                                              <div className="card-body">
-                                                  <img src={producto.image} alt='' className='w-30' />
-
-                                              </div>
-                                              {producto.price}
-
-                                              <div className="card-footer">
-
-                                                  {isInCart(producto.id) ? (
-                                                 <Link to="/cart">
-                                                 <button className="btn btn-dark  btn-block mb-3 mt-1 ms-3">Finaliza tu compra</button>
-                                                </Link>
-                                                  ):(
-
-                                                 <ItemCount
-                                                 onAdd={onAdd}
-                                                 initial={1}
-                                                 stock={5}
-                                                 />
-                                                  )}
 
 
-
-                                              </div>
                                           </div>
                                       </div>
 
-      </div>
 )} else {
     return(
     <div>

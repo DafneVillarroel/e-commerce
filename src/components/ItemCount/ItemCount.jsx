@@ -21,11 +21,11 @@ function decrement(){
 
   return (
     <div style={{display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center'}}>
-    <button class="btn btn-dark me-2 ms-2"  onClick={decrement}>-</button>
+    <button class="btn-outline-secondary me-2 ms-2"  onClick={decrement}>-</button>
      <h3>{count}</h3>
-      <button class="btn btn-dark me-2 ms-2" disabled={count > stock ? true : null} onClick={increment}>+</button>
+      <button class="btn-outline-secondary me-2 ms-2" disabled={count > stock ? true : null} onClick={increment}>+</button>
       <button type="button"
-       class="btn btn-warning me-2 ms-2"
+       class="btn btn-warning me-2 ms-2 mt-2"
        onClick={()=>onAdd(count)}
       disabled={count > stock ? true : null}>Agregar al carrito</button>
     </div>

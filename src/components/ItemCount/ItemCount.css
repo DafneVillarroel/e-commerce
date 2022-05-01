@@ -1,7 +1,6 @@
 button {
-  border: none;
-  border-radius: 6px;
-  padding-inline: 18px;
-  margin-inline: 10px;
+  border-radius: 4px!important;
+  border: 1px solid grey;
+  padding-inline: 15px;
   font-weight: bold;
 }

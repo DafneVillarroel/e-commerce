@@ -1,4 +1,5 @@
 import './App.css';
+import Carrousel from './Carrousel/Carrousel';
 import RoutesApp from './routes/RoutesApp';
 
 function App() {
@@ -8,7 +9,6 @@ function App() {
   }
   return (
    <div className="App">
-
        <RoutesApp/>
 
    </div>

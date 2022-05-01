@@ -9,19 +9,18 @@ return (
             {
               producto.map((producto) => {
                 return (
-                  <div key={producto.id} >
+                     <div key={producto.id} >
                     <Item
                      producto={producto}
-                    />
-                  </div>
+                     />
+                     </div>
                 );
               })
-            }
-          </>
-        ) : (
+             }
+           </>
+          ) : (
           <p>Cargando productos...</p>
         )
-
       }
     </div>
   );
