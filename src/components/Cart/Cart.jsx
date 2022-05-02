@@ -33,24 +33,6 @@ addDoc(queryCollection, orden)
   .catch(err=> console.log(err))
 
 }
-
-// actualizar stock
-// const queryCollectionStock = collection(db, 'productos')
-
-// const queryActualizarStock = query(
-//   queryCollectionStock,
-//   where(documentId(), 'in', itemsInCart.map(it => it.id))
-// )
-// const batch = writeBatch(db)
-
-// await getDocs(queryActualizarStock)
-//  .then(resp => resp.docs.forEach(res => batch.update(res.ref,{
-//    stock:res.data().stock = itemsInCart.find(items => items.id === res.id).quantity
-//  }) ))
-// .finally(()=> console.log('actualizado'))
-
-// batch.commit()
-
   if(itemsInCart.length === 0){
      return(
      <div className="container">
@@ -58,9 +40,8 @@ addDoc(queryCollection, orden)
        <div>
         <Link to="/">Ir al catalogo</Link>
        </div>
-
-       <img src="https://i.blogs.es/588e01/istock-689453486/840_560.jpeg" className="w-75 mt-2"/>
-     </div>
+            <img src="https://i.blogs.es/588e01/istock-689453486/840_560.jpeg" className="w-75 mt-2"/>
+       </div>
      )
   }
 else{

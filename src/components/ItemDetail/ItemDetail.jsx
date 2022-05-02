@@ -7,11 +7,12 @@ import useCartContext from '../../context/CartContext';
 
 
 const ItemDetail = ({producto}) => {
-
-const {addItem, isInCart } = useCartContext()
+const [hideCount, setHideCount] = useState(false)
+const {addItem} = useCartContext()
 
  function onAdd(count){
      addItem(producto, count)
+     setHideCount(!hideCount)
   }
 
 if (producto) {
@@ -34,7 +35,7 @@ if (producto) {
                                                       </div>
                                                       <div className="mt-4">
 
-                                                          {isInCart(producto.id) ? (
+                                                          {hideCount ? (
                                                          <Link to="/cart">
                                                          <button className="btn btn-warning d-flex justify-content-start ms-2">Comprar ahora</button>
                                                         </Link>

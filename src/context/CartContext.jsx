@@ -11,7 +11,15 @@ export function CartContextProvider({children}) {
 const [itemsInCart, setItemsInCart] = useState([])
 
   function addItem(items, quantity){
-    setItemsInCart([...itemsInCart, {...items, quantity}])
+    const product = getItemInCart(items.id)
+    if(product){
+      const newCart = itemsInCart.filter(prod => prod.id !== product.id)
+      quantity += product.quantity
+      setItemsInCart([...newCart, {...product, quantity}])
+    } else{
+       setItemsInCart([...itemsInCart, {...items, quantity}])
+    }
+
   }
 
  function isInCart(id){

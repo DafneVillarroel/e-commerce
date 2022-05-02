@@ -1,15 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import ItemList from '../ItemList/ItemList';
-import { producto } from '../../helpers/getFetch'
 import { useParams } from 'react-router-dom';
 import {collection, doc, getDoc, getDocs, getFirestore, query, where} from 'firebase/firestore'
 import './ItemListContainer.css'
 import Carrousel from '../../Carrousel/Carrousel';
-
+import Footer from '../../components/Footer/Footer'
 
 const ItemListContainer = () => {
 
- const [items, setItems] = useState([]);
  const [productos, setProductos] = useState([])
 const [loading, setLoading] = useState(true)
  const { categoriaId } = useParams()
@@ -46,42 +44,13 @@ const [loading, setLoading] = useState(true)
    }}
 ,[categoriaId])
 
-
-//  const getProducts = new Promise((resolve, reject) => {
-//   setTimeout(() => {}, 2000)
-//  });
-
-// const getProductsFromDB = async () => {
-// try {
-// const result = await getProducts;
-//    if (categoriaId) {
-//  const resultado = result.filter(destino => destino.categoria === categoriaId);
-// setItems(resultado);
-// } else {
-//  setItems(result);
-// }
-
-// } catch (error) {
-// console.log(error);
-// alert('No podemos mostrar los productos en este momento');
-// }
-// };
-
-
-// useEffect(() => {
-
-//   getProductsFromDB();
-
-//  }, [categoriaId]);
-
-
-
  return (
 
   <section className="item-list-container">
-    <div>
+       <div>
        <Carrousel/>
-    </div>
+
+       </div>
   <h4 className="item-list-container__title pt-3">Productos Destacados</h4>
    { loading ? <div class="spinner">
   <div></div>
@@ -91,7 +60,10 @@ const [loading, setLoading] = useState(true)
   <div></div>
   </div> :
    <ItemList  producto={productos} /> }
-  </section>
+   <div>
+    <Footer/>
+   </div>
+</section>
 
  );
 
