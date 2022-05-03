@@ -6,6 +6,57 @@
  box-shadow: 15px 15px 30px #bebebe,
              -15px -15px 30px #ffffff;
 }
+.buttonItem {
+ position: relative;
+ overflow: hidden;
+ outline: none;
+ cursor: pointer;
+ border-radius: 50px;
+ background-color: #040404;
+ font-family: inherit;
+ margin-block-end:10px;
+}
+
+.default-btn,.hover-btn {
+ background-color: #040404;
+ display: -webkit-box;
+ display: -moz-box;
+ display: -ms-flexbox;
+ display: -webkit-flex;
+ display: flex;
+ align-items: center;
+ gap: 5px;
+ padding: 7px 5px;
+ font-size: 17px;
+ font-weight: 500;
+ transition: all .3s ease;
+}
+
+.hover-btn {
+ position: absolute;
+ inset: 0;
+ background-color:#040404;
+ transform: translate(0%,100%);
+ padding-inline-start: 25px;
+}
+
+.default-btn span {
+ color: hsl(0, 0%, 100%);
+}
+
+.hover-btn span {
+ color: hsl(50deg 100% 50%);
+
+}
+
+button:hover .default-btn {
+ transform: translate(0%,-100%);
+}
+
+button:hover .hover-btn {
+ transform: translate(0%,0%);
+}
+
 @media screen and (max-width:425px){
 .card1{
   width: 50%!important;

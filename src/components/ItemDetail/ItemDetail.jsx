@@ -37,7 +37,7 @@ if (producto) {
 
                                                           {hideCount ? (
                                                          <Link to="/cart">
-                                                         <button className="btn btn-warning d-flex justify-content-start ms-2">Comprar ahora</button>
+                                                         <button className="buttonItemCount d-flex justify-content-start ms-2">Comprar ahora</button>
                                                         </Link>
                                                           ):(
 

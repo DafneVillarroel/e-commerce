@@ -2,7 +2,7 @@ import React from 'react'
 import useCartContext from "../../context/CartContext"
 import {Link} from "react-router-dom"
 import './Cart.css'
-import { getFirestore,collection, query,getDocs, updateDoc, where, addDoc, writeBatch, Timestamp } from 'firebase/firestore'
+import { getFirestore,collection,addDoc, Timestamp } from 'firebase/firestore'
 
 function Cart() {
 
@@ -65,17 +65,18 @@ else{
           <td>{items.quantity}</td>
           <td>{parseFloat(items.quantity * items.price)}</td>
           <td>
-            <button className="btn btn-danger" onClick={()=>removeItemFromCart(items.id)}>Eliminar</button>
+            <button className="buttonCartDelete delete"  onClick={()=>removeItemFromCart(items.id)}>Eliminar</button>
           </td>
           </tr>
       ))
     }
   </tbody>
 </table>
-
-<button onClick={()=> {alert('compra realizada')}} className="btn btn-success mx-2 mt-2">Pagar</button>
-<button onClick={()=>clearCart()} className="btn btn-danger mt-2 me-2">Vaciar Carrito</button>
-  <button onClick={generarOrden} className="btn btn-dark mt-2">Realizar Orden</button>
+<div className="buttons">
+<button onClick={()=> {alert('compra realizada')}} className="buttonCartBuy mx-2 mt-2">Pagar</button>
+<button onClick={()=>clearCart()} className="buttonCartDelete mt-2 me-2">Vaciar Carrito</button>
+<button onClick={generarOrden} className="buttonCartOrder mt-2">Realizar Orden</button>
+</div>
 </div>
 )
 }

@@ -21,7 +21,7 @@ function NavBar() {
           <nav className="ms-auto  mt-3 mb-3">
               <NavLink  to="/" className={({isActive})=> isActive ? 'Grey' : 'White'}>Home</NavLink>
               <NavLink  to="/categoria/mochilas" className={({isActive})=> isActive ? 'Grey' : 'White'}>Mochilas</NavLink>
-              <NavLink  to="/categoria/zapatillas" className={({isActive})=> isActive ? 'Grey' : 'White'}>Zapatillas</NavLink>
+              <NavLink  to="/categoria/camperas" className={({isActive})=> isActive ? 'Grey' : 'White'}>Camperas</NavLink>
           </nav>
            <NavLink   to='/cart' className={({isActive})=> isActive ? 'White' : 'Grey'}><CartWidget/></NavLink>
         </div>
