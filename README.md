@@ -5,8 +5,7 @@
 
 ## Acerca de
 
-- La pagina consiste en una tienda de articulos de Trekking. Pudes visitar la demo en el siguiente link: https://idyllic-sunburst-c42c3b.netlify.app/
-
+- La pagina consiste en una tienda de articulos de Trekking. Pudes visitar la demo en el siguiente link: https://comfy-klepon-1d4f2a.netlify.app/
 #WEB
 | Bibliotecas | Versiones |
 | ------ | ------ |
